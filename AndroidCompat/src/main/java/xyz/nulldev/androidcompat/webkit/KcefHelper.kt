@@ -127,7 +127,7 @@ class JsHandler : CefMessageRouterHandlerAdapter {
               var result = payload();
 
               window.${QUERY_FN}({
-                  request: JSON.stringify({ id: "$id", result }),
+                  request: JSON.stringify({ id: "$id", result: JSON.stringify(result) }),
                   onSuccess: function (response) {},
                   onFailure: function (error_code, error_message) {}
               });
